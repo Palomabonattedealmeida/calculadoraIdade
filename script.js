@@ -5,6 +5,7 @@ function calculateAge() {
     var ageDays = document.getElementById('ageDays');
     var ageMonths = document.getElementById('ageMonths');
     var ageYears = document.getElementById('ageYears');
+    
   
     var birthDate = new Date(yearInput.value, monthInput.value - 1, dayInput.value);
     var today = new Date();
@@ -19,9 +20,33 @@ function calculateAge() {
     var ageYearsDiff = ageDate.getUTCFullYear() - 1970;
     var ageMonthsDiff = ageDate.getUTCMonth();
     var ageDaysDiff = ageDate.getUTCDate() - 1;
+    
+  
   
     ageDays.textContent = ageDaysDiff;
     ageMonths.textContent = ageMonthsDiff;
     ageYears.textContent = ageYearsDiff;
+    liveMonths.textContent = liveMonthsDiff;
+    liveDays.textContent = liveDaysDiff;
+  }
+
+  function resetFields() {
+    var dayInput = document.getElementById('day');
+    var monthInput = document.getElementById('month');
+    var yearInput = document.getElementById('year');    
+    var ageDays = document.getElementById('ageDays');
+    var ageMonths = document.getElementById('ageMonths');
+    var ageYears = document.getElementById('ageYears');
+    
+    // Limpar os campos de entrada
+    dayInput.value = '';
+    monthInput.value = '';
+    yearInput.value = '';
+  
+    // Limpar os resultados
+    ageDays.textContent = '';
+    ageMonths.textContent = '';
+    ageYears.textContent = '';
+    
   }
   
